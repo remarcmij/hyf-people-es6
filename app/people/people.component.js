@@ -1,5 +1,10 @@
 'use strict';
 import angular from 'angular';
+import ngMaterial from 'angular-material';
+
+import mainToolbarComponent from '../navigation/main-toolbar.component';
+import sideNavComponent from '../navigation/side-nav.component';
+import personItemComponent from './person-item.component';
 
 const template = require('./people.template.html');
 
@@ -32,15 +37,15 @@ class PeopleController {
 
 PeopleController.$inject = ['$state', '$mdSidenav', '$window', 'appTitle'];
 
-angular.module('app.people')
+export default angular.module('peopleComponent', [ngMaterial, personItemComponent, mainToolbarComponent, sideNavComponent])
     .component('hyfPeople', {
         template,
         bindings: {
             persons: '<'
         },
         controller: PeopleController
-    });
-
+    })
+    .name;
 
 
 

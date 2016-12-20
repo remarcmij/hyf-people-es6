@@ -2,12 +2,12 @@
 import angular from 'angular';
 
 export default angular.module('app.about', [])
-    .config(config)
+    .config(routing)
     .name
 
-config.$inject = ['$stateProvider'];
+routing.$inject = ['$stateProvider'];
 
-function config($stateProvider) {
+function routing($stateProvider) {
     $stateProvider
         .state('about', {
             url: '/about',

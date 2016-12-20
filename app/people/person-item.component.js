@@ -1,5 +1,8 @@
 'use strict';
 import angular from 'angular';
+import ngMaterial from 'angular-material';
+
+import peopleService from '../services/people.service';
 
 const template = require('./person-item.template.html');
 
@@ -16,7 +19,7 @@ class PersonItemController {
 
 PersonItemController.$inject = ['peopleService'];
 
-angular.module('app.people')
+export default angular.module('personItemComponent', [peopleService, ngMaterial])
     .component('hyfPersonItem', {
         template,
         bindings: {
@@ -24,5 +27,6 @@ angular.module('app.people')
             onClick: '&'
         },
         controller: PersonItemController
-    });
+    })
+    .name;
 

@@ -1,11 +1,12 @@
 'use strict';
 import angular from 'angular';
+import ngMaterial from 'angular-material';
 
 const template = require('./main-toolbar.template.html');
 
 class MainToolbarController {
 
-    constructor ($window) {
+    constructor($window) {
         this.$window = $window;
     }
 
@@ -21,7 +22,7 @@ class MainToolbarController {
 
 MainToolbarController.$inject = ['$window'];
 
-export default angular.module('app.navigation')
+export default angular.module('mainToolbarComponent', [ngMaterial])
     .component('hyfMainToolbar', {
         template,
         bindings: {
@@ -29,4 +30,5 @@ export default angular.module('app.navigation')
             openSideNav: '&'
         },
         controller: MainToolbarController
-    });
+    })
+    .name;

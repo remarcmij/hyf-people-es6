@@ -1,5 +1,8 @@
 'use strict';
 import angular from 'angular';
+import ngMaterial from 'angular-material';
+
+import childToolbarComponent from '../navigation/child-toolbar.component';
 
 const template = require('./person-detail.template.html');
 
@@ -16,11 +19,12 @@ class PersonDetailController {
 
 PersonDetailController.$inject = ['$window'];
 
-angular.module('app.people')
+export default angular.module('personDetailComponent', [ngMaterial, childToolbarComponent])
     .component('hyfPersonDetail', {
         template,
         bindings: {
             person: '<'
         },
         controller: PersonDetailController
-    });
+    })
+    .name;

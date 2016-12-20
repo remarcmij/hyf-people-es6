@@ -1,5 +1,6 @@
 'use strict';
 import angular from 'angular';
+import ngMaterial from 'angular-material';
 
 const template = require('./child-toolbar.template.html');
 
@@ -17,7 +18,7 @@ class ChildToolbarController {
 
 ChildToolbarController.$inject = ['$state'];
 
-export default angular.module('app.navigation')
+export default angular.module('childToolbarComponent', [ngMaterial])
     .component('hyfChildToolbar', {
         template,
         bindings: {
@@ -25,5 +26,6 @@ export default angular.module('app.navigation')
             parentState: '@'
         },
         controller: ChildToolbarController
-    });
+    })
+    .name;
 

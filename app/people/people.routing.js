@@ -1,8 +1,14 @@
-'use strict'
+'use strict';
+import angular from 'angular';
+import ngSanitize from 'angular-sanitize';
 
-config.$inject = ['$stateProvider'];
+import peopleService from '../services/people.service';
+import peopleComponent from './people.component';
+import personDetailComponent from './person-detail.component'
 
-export default function config($stateProvider) {
+routing.$inject = ['$stateProvider'];
+
+function routing($stateProvider) {
     $stateProvider
         .state('home', {
             url: '/',
@@ -35,3 +41,8 @@ function resolvePerson($stateParams, peopleService) {
             return person;
         });
 }
+
+export default angular.module('peopleRouting', [ngSanitize, peopleService, peopleComponent, personDetailComponent])
+    .config(routing)
+    .name;
+
