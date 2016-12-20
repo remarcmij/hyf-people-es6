@@ -1,4 +1,4 @@
-# `hyf-people` - a sample Angular JS 1.5 app for Hack Your Future
+# `hyf-people` - a sample Angular JS 1.5 ES6 app for Hack Your Future
 
 This application demonstrates some key features of Angular JS 1.5 as taught during the Hack Your Future, Amsterdam programme. Specifically, the following are areas covered:
 
@@ -6,6 +6,7 @@ This application demonstrates some key features of Angular JS 1.5 as taught duri
 - services
 - ui-router v1.x, exploiting the new 'route to component' and 'resolve bindings'
 - separation of functionality/feature areas into modules
+- using ES6, Babel and Webpack
 
 The sample application focusses on the front-end. In order to demonstrate how to get data from a back-end using `$http`, the `json-server` npm package is used for providing a simple API on the basis of a `json` data file.
 
@@ -19,6 +20,8 @@ The application is developed to meet the following (hypothetical) user requireme
 
 3. The application should look good on mobile devices as well as on desktops.
 
+4. You should use ES6, Babel and Webpack
+
 In addition the IT project manager in charge has ordained these technical demands:
 
 4. The Angular JS 1 guidelines from John Papa as published [https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md) should be adhered to.
@@ -27,7 +30,9 @@ In addition the IT project manager in charge has ordained these technical demand
 
 ## Getting started
 
-1. Clone the project from GitHub to a local project folder on your development machine.
+1. Clone the project from GitHub to a local project folder on your development machine. Then type:
+
+    `npm install`
 
 2. Install `json-server` as a global npm package:
 

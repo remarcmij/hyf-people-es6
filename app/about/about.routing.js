@@ -1,7 +1,9 @@
 'use strict';
 import angular from 'angular';
 
-export default angular.module('app.about', [])
+import aboutComponent from './about.component';
+
+export default angular.module('app.about', [aboutComponent])
     .config(routing)
     .name
 
