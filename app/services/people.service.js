@@ -2,17 +2,17 @@ import angular from 'angular';
 
 class PeopleService {
 
-    roleTitles = {
-        staff: 'Staff Member',
-        mentor: 'Mentor',
-        student: 'Student'
-    };
-
     constructor($http, $q, $log, apiEndPoint) {
         this.$http = $http;
         this.$q = $q;
         this.$log = $log;
         this.apiEndPoint = apiEndPoint;
+
+        this.roleTitles = {
+            staff: 'Staff Member',
+            mentor: 'Mentor',
+            student: 'Student'
+        };
     }
 
     getAllPeople() {

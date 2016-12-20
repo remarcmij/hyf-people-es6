@@ -20,7 +20,7 @@ module.exports = {
                 query: {
                     presets: [
                         'babel-preset-es2015',
-                        'babel-preset-stage-0'
+                        'babel-preset-stage-3'
                     ].map(require.resolve),
                     plugins: ['transform-runtime']
                 },
