@@ -7,7 +7,7 @@ module.exports = {
         './app/app.module.js'
     ],
     output: {
-        path: path.resolve(__dirname, 'build'),
+        path: path.join(__dirname, 'build'),
         filename: 'bundle.js'
     },
     devtool: 'source-map',
@@ -16,18 +16,18 @@ module.exports = {
             {
                 test: /\.js$/,
                 loader: 'babel',
-                exclude: /node_modules/,
+                include: __dirname + '/app',
                 query: {
-                    presets: [
-                        'babel-preset-es2015',
-                        'babel-preset-stage-3'
-                    ].map(require.resolve),
                     plugins: ['transform-runtime']
-                },
+                }
             },
             {
                 test: /\.html$/,
-                loader: 'raw'
+                loader: 'html'
+            },
+            {
+                test: /\.css$/,
+                loaders: ['style', 'css']
             }
         ]
     },

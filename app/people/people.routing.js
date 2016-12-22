@@ -1,4 +1,3 @@
-'use strict';
 import angular from 'angular';
 import ngSanitize from 'angular-sanitize';
 

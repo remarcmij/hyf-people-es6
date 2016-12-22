@@ -1,4 +1,3 @@
-'use strict';
 import angular from 'angular';
 import ngMaterial from 'angular-material';
 
@@ -18,7 +17,7 @@ class PeopleController {
     }
 
     onClick(id) {
-        this.$state.go('person', {id: id});
+        this.$state.go('person', {id});
     }
 
     openSidenav() {
