@@ -177,7 +177,7 @@
         },
         {
             "id": 20,
-            "name": "Student 1",
+            "name": "Jack Sacali",
             "role": "student",
             "organisation": "Hack Your Future Amsterdam",
             "pictureUrl": "/app/assets/avatars/student1.png",
@@ -186,7 +186,7 @@
         },
         {
             "id": 21,
-            "name": "Student 2",
+            "name": "Mohammad Bahaa Aldeiri",
             "role": "student",
             "organisation": "Hack Your Future Amsterdam",
             "pictureUrl": "/app/assets/avatars/student2.png",
@@ -204,7 +204,7 @@
         },
         {
             "id": 23,
-            "name": "Student 4",
+            "name": "Majdi Ali",
             "role": "student",
             "organisation": "Hack Your Future Amsterdam",
             "pictureUrl": "/app/assets/avatars/student4.png",

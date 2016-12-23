@@ -9,6 +9,10 @@ const template = require('./people.template.html');
 
 class PeopleController {
 
+    static get $inject() {
+        return ['$state', '$mdSidenav', '$window', 'appTitle'];
+    }
+
     constructor($state, $mdSidenav, $window, appTitle) {
         this.$state = $state;
         this.$mdSidenav = $mdSidenav;
@@ -34,17 +38,14 @@ class PeopleController {
     }
 }
 
-PeopleController.$inject = ['$state', '$mdSidenav', '$window', 'appTitle'];
-
-export default angular.module('peopleComponent', [ngMaterial, personItemComponent, mainToolbarComponent, sideNavComponent])
+angular.module('app')
     .component('hyfPeople', {
         template,
         bindings: {
             persons: '<'
         },
         controller: PeopleController
-    })
-    .name;
+    });
 
 
 

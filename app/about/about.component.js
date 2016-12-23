@@ -1,22 +1,20 @@
 import angular from 'angular';
-import ngMaterial from 'angular-material';
-
-import childToolbarComponent from '../navigation/child-toolbar.component';
 
 const template = require('./about.template.html');
 
 class AboutController {
+
+    static get $inject() {
+        return ['appTitle'];
+    }
 
     constructor(appTitle) {
         this.appTitle = appTitle;
     }
 }
 
-AboutController.$inject = ['appTitle'];
-
-export default angular.module('aboutComponent', [ngMaterial, childToolbarComponent])
+angular.module('app')
     .component('hyfAbout', {
         template,
         controller: AboutController
-    })
-    .name;
+    });

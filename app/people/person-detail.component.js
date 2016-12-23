@@ -6,6 +6,11 @@ import childToolbarComponent from '../navigation/child-toolbar.component';
 const template = require('./person-detail.template.html');
 
 class PersonDetailController {
+
+    static get $inject() {
+        return ['$window'];
+    }
+
     constructor($window) {
         this.$window = $window;
     }
@@ -16,14 +21,11 @@ class PersonDetailController {
     }
 }
 
-PersonDetailController.$inject = ['$window'];
-
-export default angular.module('personDetailComponent', [ngMaterial, childToolbarComponent])
+angular.module('app')
     .component('hyfPersonDetail', {
         template,
         bindings: {
             person: '<'
         },
         controller: PersonDetailController
-    })
-    .name;
+    });

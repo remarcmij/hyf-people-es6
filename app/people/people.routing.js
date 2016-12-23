@@ -1,9 +1,8 @@
 import angular from 'angular';
-import ngSanitize from 'angular-sanitize';
 
-import peopleService from '../services/people.service';
-import peopleComponent from './people.component';
-import personDetailComponent from './person-detail.component'
+import './people.component';
+import './person-item.component';
+import './person-detail.component';
 
 routing.$inject = ['$stateProvider'];
 
@@ -41,7 +40,6 @@ function resolvePerson($stateParams, peopleService) {
         });
 }
 
-export default angular.module('peopleRouting', [ngSanitize, peopleService, peopleComponent, personDetailComponent])
-    .config(routing)
-    .name;
+angular.module('app')
+    .config(routing);
 

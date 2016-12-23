@@ -7,6 +7,10 @@ const template = require('./person-item.template.html');
 
 class PersonItemController {
 
+    static get $inject() {
+        return ['peopleService'];
+    }
+
     constructor(peopleService) {
         this.peopleService = peopleService;
     }
@@ -16,9 +20,7 @@ class PersonItemController {
     }
 }
 
-PersonItemController.$inject = ['peopleService'];
-
-export default angular.module('personItemComponent', [peopleService, ngMaterial])
+angular.module('app')
     .component('hyfPersonItem', {
         template,
         bindings: {
@@ -26,5 +28,4 @@ export default angular.module('personItemComponent', [peopleService, ngMaterial]
             onClick: '&'
         },
         controller: PersonItemController
-    })
-    .name;
+    });

@@ -1,9 +1,12 @@
 import angular from 'angular';
-import ngMaterial from 'angular-material';
 
 const template = require('./side-nav.template.html');
 
 class SideNavController {
+
+    static get $inject() {
+        return [];
+    }
 
     constructor() {
 
@@ -11,14 +14,11 @@ class SideNavController {
 
 }
 
-SideNavController.$inject = [];
-
-export default angular.module('sideNavComponent', [ngMaterial])
+export default angular.module('app')
     .component('hyfSideNav', {
         template,
         bindings: {
             title: '<'
         },
         controller: SideNavController
-    })
-    .name;
+    });

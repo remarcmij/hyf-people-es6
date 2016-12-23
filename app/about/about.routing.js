@@ -1,10 +1,9 @@
 import angular from 'angular';
 
-import aboutComponent from './about.component';
+import './about.component';
 
-export default angular.module('app.about', [aboutComponent])
-    .config(routing)
-    .name
+angular.module('app')
+    .config(routing);
 
 routing.$inject = ['$stateProvider'];
 

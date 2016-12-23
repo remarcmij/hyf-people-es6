@@ -22,7 +22,7 @@ class PeopleService {
             cache: true
         })
             .then(resp => resp.data)
-            .catch(err => this.handleFailure(err, 'getAllPeople'));
+            .catch(err => this.handleFailure(err, this.getAllPeople));
     }
 
     getPersonById(id) {
@@ -32,11 +32,12 @@ class PeopleService {
             cache: true
         })
             .then(resp => resp.data)
-            .catch(err => this.handleFailure(err, 'getPersonById'));
+            .catch(err => this.handleFailure(err, this.getPersonById));
     }
 
-    handleFailure(e, funcName) {
-        let newMessage = 'XHR Failed for ' + funcName;
+    handleFailure(e, caller) {
+
+        let newMessage = 'XHR Failed for ' + caller.name;
         if (e.data && e.data.description) {
             newMessage = newMessage + '\n' + e.data.description;
         }
@@ -48,7 +49,6 @@ class PeopleService {
 
 PeopleService.$inject = ['$http', '$q', '$log', 'apiEndPoint'];
 
-export default angular.module('services.people', [])
-    .service('peopleService', PeopleService)
-    .name;
+angular.module('app')
+    .service('peopleService', PeopleService);
 
