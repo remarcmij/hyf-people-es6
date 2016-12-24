@@ -1,9 +1,7 @@
 import angular from 'angular';
 
-import './about.component';
-
-angular.module('app')
-    .config(routing);
+import aboutModule from './about.module';
+import aboutComponent from './about.component';
 
 routing.$inject = ['$stateProvider'];
 
@@ -11,6 +9,10 @@ function routing($stateProvider) {
     $stateProvider
         .state('about', {
             url: '/about',
-            component: 'hyfAbout'
+            component: aboutComponent
         });
 }
+
+angular.module(aboutModule)
+    .config(routing);
+

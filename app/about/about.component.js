@@ -1,5 +1,7 @@
 import angular from 'angular';
 
+import aboutModule from './about.module';
+
 const template = require('./about.template.html');
 
 class AboutController {
@@ -13,8 +15,10 @@ class AboutController {
     }
 }
 
-angular.module('app')
+const name = 'hyfAbout';
+angular.module(aboutModule)
     .component('hyfAbout', {
         template,
         controller: AboutController
     });
+export default name;

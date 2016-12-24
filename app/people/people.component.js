@@ -1,9 +1,6 @@
 import angular from 'angular';
-import ngMaterial from 'angular-material';
 
-import mainToolbarComponent from '../navigation/main-toolbar.component';
-import sideNavComponent from '../navigation/side-nav.component';
-import personItemComponent from './person-item.component';
+import peopleModule from './people.module';
 
 const template = require('./people.template.html');
 
@@ -38,14 +35,16 @@ class PeopleController {
     }
 }
 
-angular.module('app')
-    .component('hyfPeople', {
+const name = 'hyfPeople';
+angular.module(peopleModule)
+    .component(name, {
         template,
         bindings: {
             persons: '<'
         },
         controller: PeopleController
     });
+export default name;
 
 
 

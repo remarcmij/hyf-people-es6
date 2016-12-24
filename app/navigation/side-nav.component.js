@@ -1,5 +1,7 @@
 import angular from 'angular';
 
+import navModule from './nav.module';
+
 const template = require('./side-nav.template.html');
 
 class SideNavController {
@@ -11,10 +13,9 @@ class SideNavController {
     constructor() {
 
     }
-
 }
 
-export default angular.module('app')
+export default angular.module(navModule)
     .component('hyfSideNav', {
         template,
         bindings: {

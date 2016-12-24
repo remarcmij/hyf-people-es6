@@ -1,5 +1,7 @@
 import angular from 'angular';
 
+import navModule from './nav.module';
+
 const template = require('./main-toolbar.template.html');
 
 class MainToolbarController {
@@ -22,7 +24,7 @@ class MainToolbarController {
     }
 }
 
-angular.module('app')
+angular.module(navModule)
     .component('hyfMainToolbar', {
         template,
         bindings: {

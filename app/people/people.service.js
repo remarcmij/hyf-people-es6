@@ -1,5 +1,7 @@
 import angular from 'angular';
 
+import peopleModule from './people.module';
+
 class PeopleService {
 
     constructor($http, $q, $log, apiEndPoint) {
@@ -49,6 +51,10 @@ class PeopleService {
 
 PeopleService.$inject = ['$http', '$q', '$log', 'apiEndPoint'];
 
-angular.module('app')
-    .service('peopleService', PeopleService);
+const name = 'peopleService';
+
+angular.module(peopleModule)
+    .service(name, PeopleService);
+
+export default name;
 

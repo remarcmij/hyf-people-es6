@@ -1,7 +1,8 @@
 import angular from 'angular';
-import ngMaterial from 'angular-material';
 
-import peopleService from '../services/people.service';
+import peopleModule from './people.module';
+
+import peopleService from './people.service';
 
 const template = require('./person-item.template.html');
 
@@ -20,8 +21,9 @@ class PersonItemController {
     }
 }
 
-angular.module('app')
-    .component('hyfPersonItem', {
+const name = 'hyfPersonItem';
+angular.module(peopleModule)
+    .component(name, {
         template,
         bindings: {
             person: '<',
@@ -29,3 +31,4 @@ angular.module('app')
         },
         controller: PersonItemController
     });
+export default name;

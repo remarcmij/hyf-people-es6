@@ -1,7 +1,6 @@
 import angular from 'angular';
-import ngMaterial from 'angular-material';
 
-import childToolbarComponent from '../navigation/child-toolbar.component';
+import peopleModule from './people.module';
 
 const template = require('./person-detail.template.html');
 
@@ -21,7 +20,8 @@ class PersonDetailController {
     }
 }
 
-angular.module('app')
+const name = 'hyfPersonDetail';
+angular.module(peopleModule)
     .component('hyfPersonDetail', {
         template,
         bindings: {
@@ -29,3 +29,4 @@ angular.module('app')
         },
         controller: PersonDetailController
     });
+export default  name;

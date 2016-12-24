@@ -1,8 +1,10 @@
 import angular from 'angular';
 
-import './people.component';
+import peopleModule from './people.module';
+import peopleComponent from './people.component';
 import './person-item.component';
-import './person-detail.component';
+import personDetailComponent from './person-detail.component';
+import peopleService from './people.service';
 
 routing.$inject = ['$stateProvider'];
 
@@ -10,27 +12,27 @@ function routing($stateProvider) {
     $stateProvider
         .state('home', {
             url: '/',
-            component: 'hyfPeople',
+            component: peopleComponent,
             resolve: {
                 persons: resolvePeople
             }
         })
         .state('person', {
             url: '/person/:id',
-            component: 'hyfPersonDetail',
+            component: personDetailComponent,
             resolve: {
                 person: resolvePerson
             }
         });
 }
 
-resolvePeople.$inject = ['peopleService'];
+resolvePeople.$inject = [peopleService];
 
 function resolvePeople(peopleService) {
     return peopleService.getAllPeople();
 }
 
-resolvePerson.$inject = ['$stateParams', 'peopleService'];
+resolvePerson.$inject = ['$stateParams', peopleService];
 
 function resolvePerson($stateParams, peopleService) {
     return peopleService.getPersonById($stateParams.id)
@@ -40,6 +42,6 @@ function resolvePerson($stateParams, peopleService) {
         });
 }
 
-angular.module('app')
+angular.module(peopleModule)
     .config(routing);
 

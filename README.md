@@ -1,4 +1,4 @@
-# `hyf-people` - a sample Angular JS 1.5 ES6 app for Hack Your Future
+# `hyf-people-es6` - a sample Angular JS 1.5 ES6 app for Hack Your Future
 
 This application demonstrates some key features of Angular JS 1.5 as taught during the Hack Your Future, Amsterdam programme. Specifically, the following are areas covered:
 
@@ -6,7 +6,8 @@ This application demonstrates some key features of Angular JS 1.5 as taught duri
 - services
 - ui-router v1.x, exploiting the new 'route to component' and 'resolve bindings'
 - separation of functionality/feature areas into modules
-- using ES6, Babel and Webpack
+
+This version is written in ES6, using Babel and Webpack.
 
 The sample application focusses on the front-end. In order to demonstrate how to get data from a back-end using `$http`, the `json-server` npm package is used for providing a simple API on the basis of a `json` data file.
 
@@ -46,9 +47,9 @@ In addition the IT project manager in charge has ordained these technical demand
 
    `npm start`
 
-    This should install all the required files and then start up a local http server at port 8000.
+    This should install all the required files and then start up a local http server at port 8080.
 
-5. Finally, point your browser to `localhost:8000`.
+5. Finally, point your browser to `localhost:8080`.
 
 ## Ideas for experimentation
 
