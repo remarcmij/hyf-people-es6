@@ -4,6 +4,10 @@ import peopleModule from './people.module';
 
 class PeopleService {
 
+    static get $inject() {
+        return ['$http', '$q', '$log', 'apiEndPoint'];
+    }
+
     constructor($http, $q, $log, apiEndPoint) {
         this.$http = $http;
         this.$q = $q;
@@ -38,7 +42,6 @@ class PeopleService {
     }
 
     handleFailure(e, caller) {
-
         let newMessage = 'XHR Failed for ' + caller.name;
         if (e.data && e.data.description) {
             newMessage = newMessage + '\n' + e.data.description;
@@ -49,12 +52,7 @@ class PeopleService {
     }
 }
 
-PeopleService.$inject = ['$http', '$q', '$log', 'apiEndPoint'];
-
 const name = 'peopleService';
-
-angular.module(peopleModule)
-    .service(name, PeopleService);
-
+angular.module(peopleModule).service(name, PeopleService);
 export default name;
 
