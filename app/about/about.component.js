@@ -2,7 +2,7 @@ import angular from 'angular';
 
 import aboutModule from './about.module';
 
-const template = require('./about.template.html');
+const template = require('./about.component.html');
 
 class AboutController {
 

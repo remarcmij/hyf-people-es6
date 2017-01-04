@@ -2,7 +2,7 @@ import angular from 'angular';
 
 import navModule from './nav.module';
 
-const template = require('./child-toolbar.template.html');
+const template = require('./child-toolbar.component.html');
 
 class ChildToolbarController {
 

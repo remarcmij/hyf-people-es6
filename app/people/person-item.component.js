@@ -4,7 +4,7 @@ import peopleModule from './people.module';
 
 import peopleService from './people.service';
 
-const template = require('./person-item.template.html');
+const template = require('./person-item.component.html');
 
 class PersonItemController {
 

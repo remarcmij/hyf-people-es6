@@ -2,7 +2,7 @@ import angular from 'angular';
 
 import peopleModule from './people.module';
 
-const template = require('./people.template.html');
+const template = require('./people.component.html');
 
 class PeopleController {
 

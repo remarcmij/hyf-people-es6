@@ -2,7 +2,7 @@ import angular from 'angular';
 
 import navModule from './nav.module';
 
-const template = require('./side-nav.template.html');
+const template = require('./side-nav.component.html');
 
 class SideNavController {
 

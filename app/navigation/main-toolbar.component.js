@@ -2,7 +2,7 @@ import angular from 'angular';
 
 import navModule from './nav.module';
 
-const template = require('./main-toolbar.template.html');
+const template = require('./main-toolbar.component.html');
 
 class MainToolbarController {
 

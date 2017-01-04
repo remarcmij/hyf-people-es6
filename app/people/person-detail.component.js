@@ -2,7 +2,7 @@ import angular from 'angular';
 
 import peopleModule from './people.module';
 
-const template = require('./person-detail.template.html');
+const template = require('./person-detail.component.html');
 
 class PersonDetailController {
 
@@ -29,4 +29,4 @@ angular.module(peopleModule)
         },
         controller: PersonDetailController
     });
-export default  name;
+export default name;
