@@ -1,0 +1,32 @@
+<div flex layout="column" layout-fill>
+
+  <hyf-child-toolbar title="'Edit Profile'"></hyf-child-toolbar>
+
+  <md-content id="content" flex layout-margin>
+    <div flex-offset-gt-sm="20" flex-gt-sm="60">
+      <form name="personForm">
+        <md-input-container class="md-block">
+          <label>Name</label>
+          <input ng-model="$ctrl.person.name">
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label>Role</label>
+          <md-select ng-model="$ctrl.person.role" placeholder="Select a role">
+            <md-option ng-repeat="item in $ctrl.roleTitles" ng-value="item.role">
+              {{item.title}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label>Organisation</label>
+          <input ng-model="$ctrl.person.organisation">
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label>Biography</label>
+          <textarea ng-model="$ctrl.person.bio" md-maxlength="1500" rows="5" md-select-on-focus></textarea>
+        </md-input-container>
+      </form>
+    </div>
+  </md-content>
+
+</div>

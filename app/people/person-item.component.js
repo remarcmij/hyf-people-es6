@@ -12,13 +12,14 @@ class PersonItemController {
         return ['peopleService'];
     }
 
+    get roleTitle() {
+        return this.peopleService.getRoleTitle(this.person.role);
+    }
+
     constructor(peopleService) {
         this.peopleService = peopleService;
     }
 
-    getRoleTitle(role) {
-        return this.peopleService.roleTitles[role];
-    }
 }
 
 const name = 'hyfPersonItem';

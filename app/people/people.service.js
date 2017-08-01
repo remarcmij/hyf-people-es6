@@ -5,39 +5,41 @@ import peopleModule from './people.module';
 class PeopleService {
 
     static get $inject() {
-        return ['$http', '$q', '$log', 'apiEndPoint'];
+        return ['$http', '$q', '$log'];
     }
 
-    constructor($http, $q, $log, apiEndPoint) {
+    constructor($http, $q, $log) {
         this.$http = $http;
         this.$q = $q;
         this.$log = $log;
-        this.apiEndPoint = apiEndPoint;
 
-        this.roleTitles = {
-            staff: 'Staff Member',
-            mentor: 'Mentor',
-            student: 'Student'
-        };
+        this.roleTitles = [
+            {role: 'staff', title: 'Staff Member'},
+            {role: 'mentor', title: 'Mentor'},
+            {role: 'student', title: 'Student'}
+        ];
+    }
+
+    getRoleTitle(role) {
+        let item = this.roleTitles.find(item => item.role === role);
+        return item ? item.title : role;
     }
 
     getAllPeople() {
         return this.$http({
-            url: this.apiEndPoint + '/persons',
+            url: '/person',
             method: 'GET',
             cache: true
-        })
-            .then(resp => resp.data)
+        }).then(resp => resp.data.persons)
             .catch(err => this.handleFailure(err, this.getAllPeople));
     }
 
     getPersonById(id) {
         return this.$http({
-            url: this.apiEndPoint + '/persons/' + id,
+            url: '/person/' + id,
             method: 'GET',
             cache: true
-        })
-            .then(resp => resp.data)
+        }).then(resp => resp.data)
             .catch(err => this.handleFailure(err, this.getPersonById));
     }
 

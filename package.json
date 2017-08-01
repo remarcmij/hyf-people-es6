@@ -2,7 +2,7 @@
   "name": "hyf-people-es6",
   "private": true,
   "version": "0.0.0",
-  "description": "Sample Angular 1.5 ES6 application for Hack Your Future",
+  "description": "Reference Angular 1 ES6 application for Hack Your Future",
   "repository": "https://github.com/remarcmij/hyf-people",
   "license": "MIT",
   "devDependencies": {
@@ -16,16 +16,17 @@
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-stage-0": "^6.16.0",
     "css-loader": "^0.26.1",
+    "extract-text-webpack-plugin": "^2.0.0-beta.4",
     "html-loader": "^0.4.4",
+    "npm-run-all": "^4.0.0",
     "raw-loader": "^0.5.1",
     "style-loader": "^0.13.1",
-    "webpack": "^1.14.0",
-    "webpack-dev-server": "^1.16.2"
+    "webpack": "^2.2.0-rc.3"
   },
   "scripts": {
-    "update-deps": "npm update",
-    "start": "webpack-dev-server",
-    "json-server": "json-server --watch data/data.json"
+    "start": "npm-run-all --parallel build start-server",
+    "build": "webpack --config webpack.config.js --watch",
+    "start-server": "node ./server/server.js mongo"
   },
   "dependencies": {
     "angular": "^1.5.9",
@@ -35,6 +36,10 @@
     "angular-sanitize": "^1.5.9",
     "angular-ui-router": "^1.0.0-beta.3",
     "babel-polyfill": "^6.20.0",
-    "babel-runtime": "^6.20.0"
+    "babel-runtime": "^6.20.0",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongodb": "^2.2.19",
+    "ng-file-upload": "^12.2.13"
   }
 }

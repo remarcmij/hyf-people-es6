@@ -1,5 +1,6 @@
 'use strict'
-const path = require('path');
+const path = require('path')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
     entry: [
@@ -7,15 +8,15 @@ module.exports = {
         './app/app.js'
     ],
     output: {
-        path: path.join(__dirname, 'build'),
+        path: path.resolve(__dirname, 'build'),
         filename: 'bundle.js'
     },
     devtool: 'source-map',
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.js$/,
-                loader: 'babel',
+                loader: 'babel-loader',
                 include: __dirname + '/app',
                 query: {
                     plugins: ['transform-runtime']
@@ -23,18 +24,22 @@ module.exports = {
             },
             {
                 test: /\.html$/,
-                loader: 'html'
+                loader: 'html-loader'
             },
             {
                 test: /\.css$/,
-                loaders: ['style', 'css']
+                loader: ExtractTextPlugin.extract({
+                    loader: 'css-loader'
+                })
             }
         ]
     },
-    devServer: {
-        port: 8080,
-        contentBase: __dirname,
-        inline: true
-    },
-    debug: true
-};
+    plugins: [
+        new ExtractTextPlugin('style.css')
+    ]
+    // devServer: {
+    //     port: 8080,
+    //     contentBase: __dirname,
+    //     inline: true
+    // }
+}

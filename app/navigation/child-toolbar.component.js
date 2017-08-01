@@ -1,26 +1,32 @@
 import angular from 'angular';
 
-import navModule from './nav.module';
+import navModule from './navigation.module';
 
 const template = require('./child-toolbar.component.html');
 
 class ChildToolbarController {
 
     static get $inject() {
-        return ['$state'];
+        return ['$state', '$window'];
     }
 
-    constructor($state) {
+    constructor($state, $window) {
         this.$state = $state;
+        this.$window = $window;
     }
 
     goBack() {
-        this.$state.go(this.parentState);
+        if (this.parentState) {
+            this.$state.go(this.parentState);
+        } else {
+            this.$window.history.back();
+        }
     }
 }
 
 angular.module(navModule)
     .component('hyfChildToolbar', {
+        transclude: true,
         template,
         bindings: {
             title: '<',

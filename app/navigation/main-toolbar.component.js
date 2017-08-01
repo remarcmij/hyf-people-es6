@@ -1,31 +1,19 @@
 import angular from 'angular';
 
-import navModule from './nav.module';
+import navModule from './navigation.module';
 
 const template = require('./main-toolbar.component.html');
 
 class MainToolbarController {
 
-    static get $inject() {
-        return ['$window'];
+    constructor() {
     }
 
-    constructor($window) {
-        this.$window = $window;
-    }
-
-    openMenu($mdOpenMenu, ev) {
-        $mdOpenMenu(ev);
-    }
-
-    visitMainSite() {
-        let win = this.$window.open('http://www.hackyourfuture.net/', '_blank');
-        win.focus();
-    }
 }
 
 angular.module(navModule)
     .component('hyfMainToolbar', {
+        transclude: true,
         template,
         bindings: {
             title: '<',

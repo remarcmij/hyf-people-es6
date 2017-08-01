@@ -1,6 +1,6 @@
 import angular from 'angular';
 
-import navModule from './nav.module';
+import navModule from './navigation.module';
 
 const template = require('./side-nav.component.html');
 

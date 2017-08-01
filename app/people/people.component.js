@@ -7,13 +7,12 @@ const template = require('./people.component.html');
 class PeopleController {
 
     static get $inject() {
-        return ['$state', '$mdSidenav', '$window', 'appTitle'];
+        return ['$state', '$mdSidenav', 'appTitle'];
     }
 
-    constructor($state, $mdSidenav, $window, appTitle) {
+    constructor($state, $mdSidenav, appTitle) {
         this.$state = $state;
         this.$mdSidenav = $mdSidenav;
-        this.$window = $window;
         this.appTitle = appTitle;
     }
 
@@ -23,15 +22,6 @@ class PeopleController {
 
     openSidenav() {
         this.$mdSidenav('left').toggle();
-    }
-
-    openMenu($mdOpenMenu, ev) {
-        $mdOpenMenu(ev);
-    }
-
-    visitMainSite() {
-        let win = this.$window.open('http://www.hackyourfuture.net/', '_blank');
-        win.focus();
     }
 }
 
